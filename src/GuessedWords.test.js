@@ -1,5 +1,5 @@
 import React from 'react';
-import {shallow} from 'Enzyme';
+import {shallow} from 'enzyme';
 import { findByTestAttr } from './Utils/TestUtils';
 import GuessedWords from './GuessedWords';
 
@@ -28,5 +28,5 @@ describe('if there are no words guessed', () => {
 });
 
 describe('if there are words guessed', () => {
-  
+
 });
