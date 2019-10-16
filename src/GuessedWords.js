@@ -3,10 +3,29 @@ import React from 'react';
 const GuessedWords = (props) => {
   let contents;
   if (props.guessedWords.length === 0) {
-    contents = (
+    contents = 
       <span data-test="guess-instructions">
         Try to guess the secret word!
       </span>
+  } else {
+    const guessedWordsRows = props.guessedWords.map((word, index) => (
+      <tr data-test="guessed-word" ket={index}>
+        <td>{word.guessedWord}</td>
+        <td>{word.letterMatchCount}</td>
+      </tr>
+    ))
+    contents = (
+      <div data-test="guessed-words">
+        <h3>Guessed words</h3>
+        <table>
+          <thead>
+            <tr><th>Guess</th><th>Matching Letters</th></tr>
+          </thead>
+          <tbody>
+            {guessedWordsRows}
+          </tbody>
+        </table>
+      </div>
     )
   }
   return (
