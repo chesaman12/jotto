@@ -4,8 +4,8 @@ export default (props) => {
   return (
     <>
       {props.success && (
-        <div data-test='component-congrats'>
-          <span data-test='congrats-message'>
+        <div data-test='component-congrats' className="alert alert-success">
+          <span data-test='congrats-message' key='congrats'>
             Congratulations! You guessed the word!
           </span>
         </div>
