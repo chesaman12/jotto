@@ -1,7 +1,7 @@
 import moxios from 'moxios';
 
-import {storeFactory} from '../Utils/TestUtils';
-import {getSecretWord} from './index';
+import { storeFactory } from '../Utils/TestUtils';
+import { getSecretWord } from './index';
 
 describe('getSecretWord action creator', () => {
   beforeEach(() => {
@@ -18,13 +18,13 @@ describe('getSecretWord action creator', () => {
       const request = moxios.requests.mostRecent();
       request.respondWith({
         status: 200,
-        response: secretWord,
+        response: secretWord
       });
     });
 
     return store.dispatch(getSecretWord()).then(() => {
       const newState = store.getState();
       expect(newState.secretWord).toBe(secretWord);
-    })
-  })
+    });
+  });
 });
